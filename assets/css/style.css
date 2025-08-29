@@ -80,21 +80,21 @@ p {
 }
 
 .section-padding {
-  padding-block: 96px;
+  padding-block: 60px;
 }
 @media (max-width: 1199px) {
   .section-padding {
-    padding-block: 80px;
+    padding-block: 50px;
   }
 }
 @media (max-width: 991px) {
   .section-padding {
-    padding-block: 60px;
+    padding-block: 48px;
   }
 }
 @media (max-width: 767px) {
   .section-padding {
-    padding-block: 48px;
+    padding-block: 36px;
   }
 }
 
