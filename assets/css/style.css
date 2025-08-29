@@ -29,6 +29,11 @@ body {
   height: 100%;
 }
 
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Mulish", sans-serif;
@@ -136,6 +141,25 @@ ul.feature-list {
 }
 
 /* ===== Header ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+          backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+header nav ul li a {
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+  padding-inline: 20px !important;
+  transition: all 230ms linear;
+}
+header nav ul li a:hover {
+  color: var(--primary-main) !important;
+}
+
 /* Glass morphism Button */
 .common-button {
   font-size: 16px;
@@ -165,7 +189,7 @@ ul.feature-list {
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: var(--primary-main);
+  color: var(--border);
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -173,17 +197,18 @@ ul.feature-list {
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   height: 52px;
-  border: 1px solid var(--primary-main);
+  border: 1px solid var(--border);
   line-height: 1;
 }
 .border-button svg {
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .border-button:hover {
   background: var(--primary-main);
   color: #ffffff;
+  border-color: var(--primary-main);
 }
 .border-button:hover svg * {
   fill: #ffffff;
@@ -191,7 +216,7 @@ ul.feature-list {
 
 /* ===== Hero ===== */
 .hero {
-  background: url("../images/banner-bg.png") no-repeat;
+  background: url("../images/home-hero-banner-img.webp") no-repeat;
   background-size: cover;
   background-position: top center;
   min-height: 80svh;
@@ -201,11 +226,17 @@ ul.feature-list {
 }
 .hero h1 {
   font-weight: 800;
-  color: var(--dark-main);
-  margin-top: 10px;
+  color: var(--border);
+  text-transform: capitalize;
+  line-height: 1.4;
 }
 .hero .hero-content {
   max-width: 780px;
+  margin-inline: auto;
+}
+.hero .sub-title {
+  background: hsla(0, 0%, 100%, 0.178);
+  color: var(--border);
 }
 
 .card {
@@ -348,9 +379,40 @@ ul.feature-list {
 
 /* About section -end */
 /* Contact */
+#contact h2 {
+  color: var(--dark-main);
+  font-weight: 700;
+}
+#contact .contact-info-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 36px;
+}
+#contact .contact-info-wrap .contact-info-box {
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 162, 255, 0.199);
+  background: linear-gradient(180deg, rgba(0, 163, 255, 0.1) 0%, rgba(0, 163, 255, 0) 100%);
+}
+#contact .contact-info-wrap .contact-info-box h4 {
+  color: var(--dark-main);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+#contact .contact-info-wrap .contact-info-box a {
+  color: var(--navy-blue);
+  font-weight: 700;
+  transition: all 150ms linear;
+}
+#contact .contact-info-wrap .contact-info-box a:hover {
+  color: var(--primary-main);
+  text-decoration: underline;
+}
+
 /* ===== Footer ===== */
 footer {
-  padding: 36px 0;
+  padding: 24px 0;
   border-top: 1px solid var(--border);
   font-size: 14px;
   background: #fff;
@@ -358,11 +420,6 @@ footer {
 
 small {
   color: var(--muted);
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Partner area - start */
