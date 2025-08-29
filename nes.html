@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kingsley Wealth Partners -- Wealth management, built around you.</title>
+  <meta name="description" content="Advisor‑first, client‑focused wealth management on a well‑capitalized, low‑bureaucracy platform.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kingsley Wealth Partners -- Wealth management, built around you.">
+  <meta property="og:description" content="Advisor‑first, client‑focused wealth management on a well‑capitalized platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kingsleywp.com/">
+  <meta property="og:image" content="https://kingsleywp.com/og-image.jpg">
+  <!-- Optional premium fonts: uncomment to load (Inter + Newsreader) -->
+  <!--
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+  -->
+  <style>
+    :root{
+      /* ===== Brand palette (adjust these 5 for final branding) ===== */
+      --navy:#0E2A47;     /* primary accent */
+      --ink:#101418;      /* body text */
+      --muted:#5E6673;    /* muted text */
+      --cloud:#F1F3F6;    /* subtle section background */
+      --border:#E4E7EC;   /* hairline borders */
+      --radius:14px;
+      --max:1200px;
+      /* ===== Image placeholders (update these URLs) ===== */
+      --hero-image:url('hero.jpg');          /* 1920x1080 suggested */
+      --logo-image:url('logo.svg');          /* header logo */
+      --founder-image:url('founder.jpg');    /* 800x1000 portrait */
+      /* ===== Typography ===== */
+      --serif:"Newsreader", ui-serif, Georgia, "Times New Roman", Times, serif;
+      --sans:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--ink);
+      background:#fff;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    h1,h2,h3{font-family:var(--serif);line-height:1.2;letter-spacing:.2px;margin:0 0 10px}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    /* ===== Header ===== */
+    header{
+      position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(140%) blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{width:32px;height:32px;background:var(--navy);-webkit-mask:var(--logo-image) no-repeat center / contain;mask:var(--logo-image) no-repeat center / contain}
+    .brand .name{font-weight:700;letter-spacing:.3px;color:var(--navy)}
+    nav a{color:var(--ink);text-decoration:none;margin-left:26px;font-weight:600}
+    nav a:hover{color:var(--navy)}
+    /* ===== Hero ===== */
+    .hero{
+      position:relative;overflow:hidden;color:#0b0f14;
+      background:
+        linear-gradient( to bottom right, rgba(14,42,71,.16), rgba(14,42,71,0) 40% ),
+        linear-gradient( to top, rgba(255,255,255,.0), rgba(255,255,255,.65) 45% ),
+        var(--hero-image) center/cover no-repeat;
+    }
+    .hero .inner{padding:120px 0 96px}
+    .kicker{color:var(--navy);text-transform:uppercase;letter-spacing:.14em;font-weight:700;font-size:12px;margin-bottom:14px}
+    .hero h1{font-size:56px;max-width:920px}
+    .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      display:inline-block;padding:12px 18px;border-radius:999px;border:1.5px solid var(--navy);
+      color:#fff;background:var(--navy);text-decoration:none;font-weight:700;letter-spacing:.2px
+    }
+    .btn--ghost{background:transparent;color:var(--navy)}
+    /* ===== Sections ===== */
+    section{padding:64px 0;border-top:1px solid var(--border)}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:28px}
+    @media(min-width:980px){ .two{grid-template-columns:1.15fr .85fr} .two-rev{grid-template-columns:.9fr 1.1fr} }
+    .card{
+      background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;
+      box-shadow:0 12px 32px rgba(14,42,71,.05);
+    }
+    /* Feature list with check dots */
+    .feature-list{margin:14px 0 0 0;padding:0;list-style:none}
+    .feature-list li{position:relative;padding-left:28px;margin:10px 0}
+    .feature-list li::before{
+      content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;
+      border:2px solid var(--navy);
+    }
+    /* Trusted logos row */
+    .logos{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:20px}
+    .logos img{height:28px;opacity:.7;filter:grayscale(100%);transition:opacity .2s}
+    .logos img:hover{opacity:1}
+    /* Founder image */
+    .portrait{
+      width:100%;max-width:520px;border-radius:12px;border:1px solid var(--border);
+      box-shadow:0 14px 36px rgba(14,42,71,.08);object-fit:cover;
+      aspect-ratio: 4/5; background: #eef1f6;
+    }
+    /* Clients section background */
+    .section-cloud{background:linear-gradient(#fff, #fff), radial-gradient(800px 300px at 10% 0%, rgba(14,42,71,.06), rgba(14,42,71,0) 60%); background-blend-mode:normal}
+    /* Contact */
+    a.mail{color:var(--navy);text-decoration:none}
+    a.mail:hover{text-decoration:underline}
+    /* ===== Footer ===== */
+    footer{padding:36px 0;border-top:1px solid var(--border);font-size:14px;background:#fff}
+    small{color:var(--muted)}
+    /* Smooth scroll */
+    html{scroll-behavior:smooth}
+  </style>
+</head>
+<body>
+  <header aria-label="Site header">
+    <div class="container nav">
+      <div class="brand" aria-label="Kingsley Wealth Partners">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="name">Kingsley Wealth Partners</div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#advisors">Advisors</a>
+        <a href="#clients">Clients</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO (clean: title only, no subtitle) -->
+    <section class="hero" role="banner">
+      <div class="container inner">
+        <div class="kicker">Advisor‑First</div>
+        <h1>Wealth management, built around you.</h1>
+        <div class="btns" role="group" aria-label="Primary actions">
+          <a class="btn" href="mailto:recruitment@kingsleywp.com" aria-label="Talk to Recruiting via email">Talk to Recruiting</a>
+          <a class="btn btn--ghost" href="mailto:hello@kingsleywp.com" aria-label="General inquiry via email">General Inquiry</a>
+        </div>
+        <!-- Optional: partner logos (replace src) -->
+        <div class="logos" aria-label="Trusted tooling & partners">
+          <img src="logo-1.png" alt="Partner 1 logo">
+          <img src="logo-2.png" alt="Partner 2 logo">
+          <img src="logo-3.png" alt="Partner 3 logo">
+          <img src="logo-4.png" alt="Partner 4 logo">
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVISORS -->
+    <section id="advisors">
+      <div class="container grid two">
+        <div>
+          <h2>For Advisors</h2>
+          <p class="muted">Build your practice on a platform designed around you:</p>
+          <ul class="feature-list">
+            <li><strong>Better payouts</strong> with transparent economics</li>
+            <li><strong>Low bureaucracy</strong> and fast decisions</li>
+            <li><strong>You own the client relationship</strong></li>
+            <li><strong>Marketing engine</strong> with access to ~120,000 targeted leads</li>
+            <li><strong>Founder mentorship</strong> and peer community</li>
+            <li><strong>Optional in-house SMA partner</strong> support</li>
+            <li><strong>W‑2 or 1099 tracks</strong> available with <strong>competitive benefits</strong> at offer</li>
+          </ul>
+          <p class="muted" style="margin-top:14px;">Start a confidential conversation → <a class="mail" href="mailto:recruitment@kingsleywp.com">recruitment@kingsleywp.com</a></p>
+        </div>
+        <div class="card" aria-label="Why Kingsley">
+          <h2>Why Kingsley</h2>
+          <ul>
+            <li><strong>Advisor‑first DNA</strong> -- everything centers on the advisor‑client relationship</li>
+            <li><strong>Well‑capitalized</strong> -- stability to invest in people and tools</li>
+            <li><strong>Minority‑owned</strong> -- a differentiated, inclusive perspective</li>
+            <li><strong>Execution speed</strong> -- low layers, quick answers</li>
+            <li><strong>Growth support</strong> -- marketing, mentorship, and optional SMA resources</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients" class="section-cloud">
+      <div class="container">
+        <h2>For Clients</h2>
+        <p>Personalized, fiduciary‑standard planning delivered by advisors who are empowered to focus on you.</p>
+        <ul class="feature-list">
+          <li>Planning and portfolio guidance tailored to your goals</li>
+          <li>Advisors who keep ownership of the relationship (continuity matters)</li>
+          <li>Operational efficiency so more time goes to you</li>
+        </ul>
+        <p class="muted"><em>We will begin offering advisory services upon regulatory approval.</em></p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container grid two-rev">
+        <div>
+          <img class="portrait" src="founder.jpg" alt="Portrait of Aaron Richards">
+        </div>
+        <div>
+          <h2>About the Founder</h2>
+          <h3 style="margin:0 0 6px;">Aaron Richards, M.S., Founder &amp; CEO</h3>
+          <p>Aaron Richards, M.S., is a builder--of teams, systems, and standards that put families first. He grew up in a home led by two pastors, Dr. Kim and Dr. Osborne Richards, where faith, responsibility, and service weren't slogans; they were Tuesday. Aaron's north star is simple: create the kind of stability that let his wife, Brooke, be present with their two kids and support his parents through long-term care. Before launching Kingsley, he led ATN, a national education and community platform, where he learned how to turn complex ideas into clear, practical plans--and how much advisors can do when red tape gets out of the way.</p>
+          <p><strong>Kingsley Wealth Partners</strong> is the culmination of that journey: a <strong>well-capitalized, advisor-first RIA</strong> designed for <strong>low bureaucracy, clear incentives, and real support</strong>. Advisors keep ownership of their client relationships, get founder-level mentorship, and plug into modern marketing and operating systems so they can spend more time serving people. As a <strong>minority-owned</strong> firm headquartered in Phoenix, Kingsley blends rigor with heart: straightforward planning, fiduciary duty once approved, and a culture that values long-term relationships over short-term noise.</p>
+          <p class="muted" style="font-size:14px;">Aaron's story reflects his personal background and values. Kingsley Wealth Partners will offer advisory services upon regulatory approval.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Recruiting: <a class="mail" href="mailto:recruitment@kingsleywp.com">recruitment@kingsleywp.com</a><br>
+          General: <a class="mail" href="mailto:hello@kingsleywp.com">hello@kingsleywp.com</a><br>
+          Phoenix, Arizona
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <small><strong>Disclosure:</strong> Kingsley Wealth Partners LLC's <strong>application for registration is in process</strong> with the Arizona regulator. <strong>No investment advisory services are offered until approval.</strong></small>
+      <br><small>(c) Kingsley Wealth Partners LLC. All rights reserved.</small>
+      <!-- After filing, you may update hero title or keep as-is. Keep disclosure until approval. -->
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
